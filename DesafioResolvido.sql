@@ -1,6 +1,6 @@
--- Resolução do desafio de projeto Trilhar dotnet com banco de dados
+-- Resoluï¿½ï¿½o do desafio de projeto Trilhar dotnet com banco de dados
 
--- Selecionando o banco de dados Fimes
+-- Selecionando o banco de dados Filmes
 USE Filmes
 
 -- 1 - Buscar o nome e ano dos filmes
@@ -10,15 +10,15 @@ SELECT Nome, Ano FROM Filmes
 SELECT Nome, Ano, Duracao FROM Filmes
 ORDER BY Ano
 
--- 3 - Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duração
+-- 3 - Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duraï¿½ï¿½o
 SELECT Nome, Ano, Duracao FROM Filmes
 WHERE Nome = 'de volta para o futuro'
 
---4 - Buscar os filmes lançados em 1997
+--4 - Buscar os filmes lanï¿½ados em 1997
 SELECT Nome, Ano, Duracao FROM Filmes
 WHERE Ano = 1997
 
--- 5 - Buscar os filmes lançados APÓS o ano 2000
+-- 5 - Buscar os filmes lanï¿½ados APï¿½S o ano 2000
 SELECT Nome, Ano, Duracao FROM Filmes
 WHERE Ano > 2000
 
@@ -27,32 +27,32 @@ SELECT Nome, Ano, Duracao FROM Filmes
 WHERE Duracao > 100 AND Duracao < 150
 ORDER BY Duracao
 
--- 7 - Buscar a quantidade de filmes lançadas no ano, agrupando por ano, ordenando pela duracao em ordem decrescente
+-- 7 - Buscar a quantidade de filmes lanï¿½adas no ano, agrupando por ano, ordenando pela duracao em ordem decrescente
 SELECT Ano, COUNT(Duracao) Quantidade
 FROM Filmes
 GROUP BY Ano
 ORDER BY Quantidade DESC
 
---8 - Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
+--8 - Buscar os Atores do gï¿½nero masculino, retornando o PrimeiroNome, UltimoNome
 SELECT Id, PrimeiroNome, UltimoNome, Genero FROM Atores
 WHERE Genero = 'M'
 
---9 - Buscar os Atores do gênero feminino, retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome
+--9 - Buscar os Atores do gï¿½nero feminino, retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome
 SELECT Id, PrimeiroNome, UltimoNome, Genero FROM Atores
 WHERE Genero = 'F'
 ORDER BY PrimeiroNome
 
---10 - Buscar o nome do filme e o gênero
+--10 - Buscar o nome do filme e o gï¿½nero
 SELECT F.Nome, G.Genero 
 FROM Filmes F 
 INNER JOIN Generos G ON F.id = G.id
 ORDER BY G.Genero
 
---11 - Buscar o nome do filme e o gênero do tipo "Mistério"
+--11 - Buscar o nome do filme e o gï¿½nero do tipo "Mistï¿½rio"
 SELECT F.Nome, Genero 
 FROM Filmes F
 INNER JOIN Generos G ON F.Id = G.Id
-WHERE G.Genero = 'Mistério'
+WHERE G.Genero = 'Mistï¿½rio'
 
 --12 - Buscar o nome do filme e os atores, trazendo o PrimeiroNome, UltimoNome e seu Papel
 SELECT F.Nome, A.PrimeiroNome, A.UltimoNome, E.Papel
